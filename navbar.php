@@ -1,3 +1,14 @@
+<?php
+$current_page = basename($_SERVER['PHP_SELF']);
+
+$pages = array(
+    'about.php' => 'About',
+    'services.php' => 'Services',
+    'search.php' => 'Search',
+    'contact.php' => 'Contact',
+    'register.php' => 'Register'
+);
+?>
     <!-- Navigation -->
     <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
         <div class="container">
@@ -8,16 +19,21 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Shop</a>
+                <a class="navbar-brand" href="index.php">Shop</a>
             </div>
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="about.php">About</a></li>
-                    <li><a href="services.php">Services</a></li>
-                    <li><a href="search.php">Search</a></li>
-                    <li><a href="contact.php">Contact</a></li>
-                    <li><a href="register.php">Register</a></li>
+                    <?php
+                    foreach($pages as $page_url => $page_name) {
+
+                    $active = '';
+                    if ($current_page == $page_url) {
+                        $active = ' class="active"';
+                    }
+                    ?>
+                    <li<?= $active ?>><a href="<?= $page_url ?>"><?= $page_name ?></a></li>
+                    <?php } ?>
                 </ul>
 
                 <form class="navbar-form navbar-right" role="search" action="search.php" method="GET">
