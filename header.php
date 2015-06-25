@@ -1,3 +1,4 @@
+<?php require_once 'inc/db.php' ?>
 <!DOCTYPE html>
 <html lang="en">
 
