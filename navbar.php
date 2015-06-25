@@ -13,14 +13,14 @@
 
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li><a href="page.html">About</a></li>
-                    <li><a href="page.html">Services</a></li>
-                    <li><a href="search.html">Search</a></li>
-                    <li><a href="form.html">Contact</a></li>
-                    <li><a href="form.html">Register</a></li>
+                    <li><a href="about.php">About</a></li>
+                    <li><a href="services.php">Services</a></li>
+                    <li><a href="search.php">Search</a></li>
+                    <li><a href="contact.php">Contact</a></li>
+                    <li><a href="register.php">Register</a></li>
                 </ul>
 
-                <form class="navbar-form navbar-right" role="search" action="search.html" method="GET">
+                <form class="navbar-form navbar-right" role="search" action="search.php" method="GET">
                     <div class="input-group">
                         <input type="text" name="q" class="form-control" placeholder="Search...">
                         <span class="input-group-btn">
