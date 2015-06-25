@@ -120,7 +120,7 @@ for ($i = 0; $i < 50; $i++) {
 	$name = substr($description, 0, $first_point_pos);
 	$description = substr($description, $first_point_pos + 2);
 	$price = (float) rand(5, 500).'.'.rand(0, 99);
-	$picture = 'picture'.rand(1, 10).'.jpg';
+	$picture = 'product'.rand(1, 10).'.jpg';
 	$rating = rand(1, 5);
 	$date = getRandomDate();
 
