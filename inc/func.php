@@ -13,3 +13,16 @@ function getRandomDate() {
 
 	return $rand_date;
 }
+
+function getProductPicture($picture = '') {
+
+	$img = 'http://placehold.it/320x150';
+
+	if (!empty($picture)) {
+		$img_path = 'img/product/'.$picture;
+		if (file_exists($img_path)) {
+			return $img_path;
+		}
+	}
+	return $img;
+}

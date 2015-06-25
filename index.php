@@ -55,7 +55,7 @@ $last_products = $db->query('SELECT * FROM products ORDER BY date DESC LIMIT 6')
                     <?php foreach($last_products as $product) { ?>
                     <div class="product col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
-                            <img src="http://placehold.it/320x150" alt="">
+                            <img src="<?= getProductPicture($product['picture']) ?>" alt="">
                             <div class="caption">
                                 <h4 class="pull-right"><?= $product['price'] ?> €</h4>
                                 <h4><a href="#"><?= $product['name'] ?></a>

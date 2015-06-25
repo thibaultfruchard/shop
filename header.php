@@ -1,4 +1,7 @@
-<?php require_once 'inc/db.php' ?>
+<?php
+require_once 'inc/db.php';
+require_once 'inc/func.php';
+?>
 <!DOCTYPE html>
 <html lang="en">
 
