@@ -92,3 +92,14 @@ function displayProduct($product, $class = 'product') {
 
 	include 'product-block.php';
 }
+
+function getSliderPictures($max_count = 0) {
+
+	$slider_pictures = glob('img/slider/*.jpg');
+
+	if (empty($slider_pictures)) {
+		return '';
+	}
+
+	include 'slider.php';
+}
