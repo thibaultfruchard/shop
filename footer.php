@@ -87,7 +87,7 @@
             <div class="footer-bottom">
                 <div class="container">
                     <div class="row">
-                        <div class="col-lg-6">Copyright © Shop 2014. All right reserved.</div>
+                        <div class="col-lg-6">Copyright © Shop <?= date('Y') ?>. All right reserved.</div>
                         <div class="col-lg-6">
                             <div class="pull-right">
                                 <ul class="nav nav-pills payments">
