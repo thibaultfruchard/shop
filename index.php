@@ -60,7 +60,7 @@ $last_products = $db->query('SELECT * FROM products ORDER BY date DESC LIMIT 6')
                                 <h4 class="pull-right"><?= $product['price'] ?> €</h4>
                                 <h4><a href="#"><?= $product['name'] ?></a>
                                 </h4>
-                                <p><?= substr($product['description'], 0, 50) ?></p>
+                                <p><?= cutString($product['description'], 0, 50) ?></p>
                             </div>
                             <div class="ratings">
                                 <p class="pull-right">15 reviews</p>
