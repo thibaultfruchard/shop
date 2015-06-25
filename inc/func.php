@@ -27,6 +27,29 @@ function getProductPicture($picture = '') {
 	return $img;
 }
 
+function getProductRating($rating = 0.0, $count_reviews = 0) {
+
+	$html = '';
+
+	if ($count_reviews > 0) {
+		$html .= '<p class="pull-right">'.$count_reviews.' reviews</p>';
+	}
+
+	for($i = 0; $i < 5; $i++) {
+
+		$class = 'glyphicon-star-empty';
+		if ($rating > $i) {
+			$class = 'glyphicon-star';
+		}
+
+		$html .= '<span class="glyphicon '.$class.'"></span>';
+	}
+
+	$html .= '<span class="badge">'.$rating.' stars</span>';
+
+	return $html;
+}
+
 /*
 	Fonction qui coupe une chaine en preservant les mots
 	et ajoute une chaine à la fin du texte
