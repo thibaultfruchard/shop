@@ -1,5 +1,9 @@
 <?php
 
+/*
+Utils Functions
+*/
+
 function getRandomDate() {
 
 	$rand_year = rand(2014, 2015);
@@ -12,42 +16,6 @@ function getRandomDate() {
 	$rand_date = $rand_year.'-'.$rand_month.'-'.$rand_day.' '.$rand_hour.':'.$rand_minute.':'.$rand_second;
 
 	return $rand_date;
-}
-
-function getProductPicture($picture = '') {
-
-	$img = 'http://placehold.it/320x150';
-
-	if (!empty($picture)) {
-		$img_path = 'img/product/'.$picture;
-		if (file_exists($img_path)) {
-			return $img_path;
-		}
-	}
-	return $img;
-}
-
-function getProductRating($rating = 0.0, $count_reviews = 0) {
-
-	$html = '';
-
-	if ($count_reviews > 0) {
-		$html .= '<p class="pull-right">'.$count_reviews.' reviews</p>';
-	}
-
-	for($i = 0; $i < 5; $i++) {
-
-		$class = 'glyphicon-star-empty';
-		if ($rating > $i) {
-			$class = 'glyphicon-star';
-		}
-
-		$html .= '<span class="glyphicon '.$class.'"></span>';
-	}
-
-	$html .= '<span class="badge">'.$rating.' stars</span>';
-
-	return $html;
 }
 
 /*
@@ -71,4 +39,56 @@ function cutString($text, $max_length = 0, $end = '...', $sep = '[@]') {
 
 	// On retourne la chaine de départ telle quelle
 	return $text;
+}
+
+/*
+Product Functions
+*/
+
+function getProductPicture($picture = '') {
+
+	$img = 'http://placehold.it/320x150';
+
+	if (!empty($picture)) {
+		$img_path = 'img/product/'.$picture;
+		if (file_exists($img_path)) {
+			return $img_path;
+		}
+	}
+	return $img;
+}
+
+function getProductRating($rating = 0.0, $count_reviews = 0) {
+
+	$html = '';
+
+	if ($count_reviews > 0) {
+		$html .= '<p class="pull-right">'.$count_reviews.' reviews</p>';
+	}
+
+	$html .= '<p>';
+
+	for($i = 0; $i < 5; $i++) {
+
+		$class = 'glyphicon-star-empty';
+		if ($rating > $i) {
+			$class = 'glyphicon-star';
+		}
+
+		$html .= '<span class="glyphicon '.$class.'"></span>';
+	}
+
+	$html .= '<span class="badge">'.$rating.' stars</span>';
+	$html .= '</p>';
+
+	return $html;
+}
+
+function displayProduct($product, $class = 'product') {
+
+	if (empty($product) || !is_array($product)) {
+		return '';
+	}
+
+	include 'product-block.php';
 }
