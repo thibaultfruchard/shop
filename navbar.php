@@ -40,7 +40,7 @@ $pages = array(
 					<li class="dropdown">
 						<a id="cart-products-dropdown" href="javascript:;" class="dropdown-toggle<?= empty($_SESSION['cart']) ? ' disabled' : '' ?>" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-shopping-cart"></span> <span id="cart-products-count" class="badge"><?= !empty($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ?></span><span class="caret"></span></a>
 						<ul id="cart-products" class="dropdown-menu dropdown-cart" role="menu">
-
+							<?php include_once 'ajax-cart-products.php' ?>
 						</ul>
 					</li>
 				</ul>
@@ -53,6 +53,16 @@ $pages = array(
 						</span>
 					</div>
 				</form>
+
+				<ul class="nav navbar-nav navbar-right">
+					<?php if (!empty($_SESSION['user_id']))	{ ?>
+					<li><a>Bonjour <?= $_SESSION['firstname'] ?></a></li>
+					<li><a href="logout.php">Déconnexion</a></li>
+					<?php } else { ?>
+					<li><a href="login.php">Connexion</a></li>
+					<li><a href="register.php">Inscription</a></li>
+					<?php } ?>
+				</ul>
 			</div><!-- /.navbar-collapse -->
 		</div><!-- /.container -->
 	</nav>

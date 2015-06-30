@@ -2,7 +2,7 @@
 require_once 'inc/config.php';
 
 if (empty($_SESSION['cart'])) {
-	exit();
+	return;
 }
 
 $products_ids_array = array_keys($_SESSION['cart']);
