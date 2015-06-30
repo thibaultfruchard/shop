@@ -111,7 +111,7 @@
     <script src="js/bootstrap-slider.js"></script>
 
     <script>
-    $("form.search #price").slider({});
+    shop.init();
     </script>
 
 </body>

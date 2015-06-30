@@ -102,4 +102,8 @@ if (!empty($search)) {
             </div><!-- /.col-lg-12 -->
         </div><!-- /.row -->
 
+        <script>
+        $("form.search #price").slider({});
+        </script>
+
 <?php include_once 'footer.php' ?>

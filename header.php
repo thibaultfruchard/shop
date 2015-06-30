@@ -1,6 +1,5 @@
 <?php
-require_once 'inc/db.php';
-require_once 'inc/func.php';
+require_once 'inc/config.php';
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,6 +18,8 @@ require_once 'inc/func.php';
     <link href="css/bootstrap-slider.css" rel="stylesheet">
     <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
     <link href="css/shop.css" rel="stylesheet">
+
+    <script src="js/shop.js"></script>
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
