@@ -58,6 +58,10 @@ function getProductPicture($picture = '') {
 	return $img;
 }
 
+function getPrice($price, $currency = '€') {
+	return number_format($price, 2, ',', ' ').' '.$currency;
+}
+
 function getProductRating($rating = 0.0, $count_reviews = 0) {
 
 	$html = '';

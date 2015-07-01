@@ -13,7 +13,7 @@ foreach($session_products as $product) {
 			<img src="<?= getProductPicture($product['picture']) ?>" width="50" alt="" />
 			<span class="item-info">
 				<span><strong><?= cutString($product['name'], 15) ?></strong></span>
-				<span><?= $product['price'] ?> €</span>
+				<span><?= getPrice($product['price']) ?></span>
 			</span>
 		</span>
 		<span class="item-right">

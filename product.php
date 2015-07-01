@@ -25,7 +25,7 @@ $full_product = $query->fetch();
                     <div class="thumbnail">
                         <img class="img-responsive" src="<?= getProductPicture($full_product['picture']) ?>" alt="">
                         <div class="caption-full">
-                            <h4 class="pull-right"><?= $full_product['price'] ?> €</h4>
+                            <h4 class="pull-right"><?= getPrice($full_product['price']) ?></h4>
                             <h4><?= $full_product['name'] ?></h4>
                             <?= nl2br($full_product['description']) ?>
                         </div>

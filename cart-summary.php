@@ -36,9 +36,9 @@ if(!$isAjax) {
 					$subtotal = 0;
 					foreach($session_products as $product) {
 
-					$quantity = $session_products[$product['id']];
+					$quantity = $_SESSION['cart'][$product['id']];
 					?>
-					<tr id="product-<?= $product['id'] ?>">
+					<tr id="product-<?= $product['id'] ?>" data-id="<?= $product['id'] ?>">
 						<td class="col-sm-8 col-md-6">
 							<div class="media">
 								<a class="thumbnail pull-left" href="product.php?id=<?= $product['id'] ?>"> <img class="media-object" src="<?= getProductPicture($product['picture']) ?>" style="width: 72px;"> </a>
@@ -50,10 +50,10 @@ if(!$isAjax) {
 							</div>
 						</td>
 						<td class="col-sm-1 col-md-1" style="text-align: center">
-							<input type="email" class="form-control" id="exampleInputEmail1" value="1">
+							<input type="text" class="form-control" value="<?= $quantity ?>">
 						</td>
-						<td class="col-sm-1 col-md-1 text-center"><strong><?= $product['price'] ?> €</strong></td>
-						<td class="col-sm-1 col-md-1 text-center"><strong><?= $product['price'] * $quantity ?> €</strong></td>
+						<td class="col-sm-1 col-md-1 text-center"><strong><?= getPrice($product['price']) ?></strong></td>
+						<td class="col-sm-1 col-md-1 text-center"><strong><?= getPrice($product['price'] * $quantity) ?></strong></td>
 						<td class="col-sm-1 col-md-1">
 							<button type="button" class="btn-remove-cart-product btn btn-danger" data-id="<?= $product['id'] ?>">
 								<span class="glyphicon glyphicon-remove"></span> Remove
@@ -72,21 +72,21 @@ if(!$isAjax) {
 						<td>   </td>
 						<td>   </td>
 						<td><h5>Subtotal</h5></td>
-						<td class="text-right"><h5><strong id="cart-subtotal"><?= $subtotal ?> €</strong></h5></td>
+						<td class="text-right"><h5><strong id="cart-subtotal"><?= getPrice($subtotal) ?></strong></h5></td>
 					</tr>
 					<tr>
 						<td>   </td>
 						<td>   </td>
 						<td>   </td>
 						<td><h5>Estimated shipping</h5></td>
-						<td class="text-right"><h5><strong id="cart-shipping"><?= $shipping ?> €</strong></h5></td>
+						<td class="text-right"><h5><strong id="cart-shipping"><?= getPrice($shipping) ?></strong></h5></td>
 					</tr>
 					<tr>
 						<td>   </td>
 						<td>   </td>
 						<td>   </td>
 						<td><h3>Total</h3></td>
-						<td class="text-right"><h3><strong id="cart-total"><?= $total ?> €</strong></h3></td>
+						<td class="text-right"><h3><strong id="cart-total"><?= getPrice($total) ?></strong></h3></td>
 					</tr>
 					<tr>
 						<td>   </td>

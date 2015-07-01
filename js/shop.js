@@ -55,6 +55,7 @@ var shop = {
 				}
 				return false;
 			}
+
 			$('#cart-products-count').text(result.count);
 
 			switch(action) {

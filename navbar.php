@@ -40,7 +40,6 @@ $pages = array(
 					<li class="dropdown">
 						<a id="cart-products-dropdown" href="javascript:;" class="dropdown-toggle<?= empty($_SESSION['cart']) ? ' disabled' : '' ?>" data-toggle="dropdown" role="button" aria-expanded="false"> <span class="glyphicon glyphicon-shopping-cart"></span> <span id="cart-products-count" class="badge"><?= !empty($_SESSION['cart']) ? count($_SESSION['cart']) : 0 ?></span><span class="caret"></span></a>
 						<ul id="cart-products" class="dropdown-menu dropdown-cart" role="menu">
-							<?php include_once 'ajax-cart-products.php' ?>
 						</ul>
 					</li>
 				</ul>

@@ -2,7 +2,7 @@
                         <div class="thumbnail">
                             <img src="<?= getProductPicture($product['picture']) ?>" alt="">
                             <div class="caption">
-                                <h4 class="pull-right"><?= $product['price'] ?> €</h4>
+                                <h4 class="pull-right"><?= getPrice($product['price']) ?></h4>
                                 <h4><a href="product.php?id=<?= $product['id'] ?>"><?= cutString($product['name'], 20) ?></a>
                                 </h4>
                                 <p><?= cutString($product['description'], 50) ?></p>
