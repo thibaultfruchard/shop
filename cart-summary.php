@@ -3,7 +3,7 @@ require_once 'inc/config.php';
 
 $isAjax = !empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest';
 
-if (empty($_SESSION['cart'])) {
+if (empty($session_products)) {
 	if (!$isAjax) {
 		header('Location: index.php');
 	}
@@ -14,10 +14,6 @@ if(!$isAjax) {
 	require_once 'header.php';
 }
 
-$products_ids_array = array_keys($_SESSION['cart']);
-$products_ids = implode(', ', $products_ids_array);
-
-$products = $db->query('SELECT * FROM products WHERE id IN ('.$products_ids.')')->fetchAll();
 ?>
 <div id="cart-products" class="cart-summary container">
 	<div class="row">
@@ -38,9 +34,9 @@ $products = $db->query('SELECT * FROM products WHERE id IN ('.$products_ids.')')
 				<tbody>
 					<?php
 					$subtotal = 0;
-					foreach($products as $product) {
+					foreach($session_products as $product) {
 
-					$quantity = $_SESSION['cart'][$product['id']];
+					$quantity = $session_products[$product['id']];
 					?>
 					<tr id="product-<?= $product['id'] ?>">
 						<td class="col-sm-8 col-md-6">

@@ -1,16 +1,11 @@
 <?php
 require_once 'inc/config.php';
 
-if (empty($_SESSION['cart'])) {
+if (empty($session_products)) {
 	return;
 }
 
-$products_ids_array = array_keys($_SESSION['cart']);
-$products_ids = implode(', ', $products_ids_array);
-
-$products = $db->query('SELECT * FROM products WHERE id IN ('.$products_ids.')')->fetchAll();
-
-foreach($products as $product) {
+foreach($session_products as $product) {
 ?>
 <li id="product-<?= $product['id'] ?>" title="<?= $product['name'] ?>">
 	<span class="item">

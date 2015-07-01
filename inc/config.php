@@ -14,3 +14,11 @@ define('FB_APP_ID', '');
 define('FB_APP_SECRET', '');
 
 $root_path = 'http://'.$_SERVER['HTTP_HOST'].dirname($_SERVER['PHP_SELF']);
+
+$session_products = array();
+if (!empty($_SESSION['cart'])) {
+	$products_ids_array = array_keys($_SESSION['cart']);
+	$products_ids = implode(', ', $products_ids_array);
+
+	$session_products = $db->query('SELECT * FROM products WHERE id IN ('.$products_ids.')')->fetchAll();
+}
