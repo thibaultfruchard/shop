@@ -27,7 +27,7 @@ var shop = {
 			url: 'ajax-cart-products.php'
 		})
 		.done(function(result) {
-			$('#cart-products').html(result).show();
+			$('#cart-products').html(result);
 			shop.init();
 			return true;
 		})
@@ -56,26 +56,26 @@ var shop = {
 				return false;
 			}
 			$('#cart-products-count').text(result.count);
-			$('#cart-products-dropdown').removeClass('disabled');
 
 			switch(action) {
 
 				case 'add':
-					$('#cart-products-dropdown').trigger('click');
+					//$('#cart-products-dropdown').trigger('click').attr('aria-expanded', 'true');
+					var cart = shop.getCart();
+					$('#cart-products-dropdown').removeClass('disabled').dropdown('toggle');
 				break;
+
+				case 'delete':
 				case 'remove':
 					$('#product-'+product_id).fadeOut(function() {
 						$(this).remove();
 						shop.reloadCartSummary(result);
+						if (result.count == 0) {
+							$('#cart-products-dropdown').dropdown('toggle').addClass('disabled');
+						}
 					});
-				break;
-				case 'delete':
-				break;
-			}
 
-			if (result.count == 0) {
-				$('#cart-products').hide();
-				$('#cart-products-dropdown').addClass('disabled');
+				break;
 			}
 		})
 	},
