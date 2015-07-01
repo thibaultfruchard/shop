@@ -12,7 +12,7 @@
                             </div>
                             <div class="btns clearfix">
                                 <a class="btn btn-info pull-left" href="product.php?id=<?= $product['id'] ?>"><span class="glyphicon glyphicon-eye-open"></span> View</a>
-                                <a class="btn-add-to-cart btn btn-primary pull-right" data-id="<?= $product['id'] ?>" href="javascript:;"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a>
+                                <a class="btn-add-to-cart btn btn-primary pull-right" data-id="<?= $product['id'] ?>" href="cart-update.php?id=<?= $product['id'] ?>&action=add"><span class="glyphicon glyphicon-shopping-cart"></span> Add to cart</a>
                             </div>
                         </div><!-- /.thumbnail -->
                     </div><!-- /.product -->

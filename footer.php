@@ -110,9 +110,5 @@
     <script src="js/bootstrap.min.js"></script>
     <script src="js/bootstrap-slider.js"></script>
 
-    <script>
-    shop.init();
-    </script>
-
 </body>
 </html>
